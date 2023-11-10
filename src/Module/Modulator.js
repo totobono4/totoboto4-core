@@ -42,7 +42,6 @@ class Modulator {
 
         this.moduleEvent.on(this.events.LAUNCHED.name, data => {
             this.#loadedModules = [ ...this.#loadedModules, ...data.loaded ]
-            console.log("Modulator received a launched event")
             this.events.LAUNCH.setData({
                 client: client,
                 loaded: this.#loadedModules,

@@ -26,7 +26,6 @@ class Module {
         this.#moduleEvent.on(launchEvent.name, data => {
             if (data.loaded.includes(this.name)) return
             if (! this.dependencies.every(dependency => data.loaded.includes(dependency))) return
-            console.log("Module " + this.name + " loaded " + data.loaded)
             data.loaded.push(this.name)
             this.launch(data)
             launchedEvent.setData(data)
