@@ -5,10 +5,12 @@ const EventLaunched = require('./Events/EventLaunched')
 const { Client } = require('discord.js')
 
 class Module {
-    #modulator = Modulator.getInstance()
+    #modulator = null
     #moduleEvent
 
-    constructor () {
+    constructor (modulator) {
+        this.#modulator = modulator
+
         this.name = 'default module name'
         this.version = '0.0.0'
 
